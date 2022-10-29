@@ -56,6 +56,4 @@ timedatectl set-local-rtc 1
 
 - Unzip the file and place it in ~/.fonts
 
-- CD to ~/.fonts and run `fc-cache -fv`
-
-# 
+- CD to ~/.fonts and run `fc-cache -fv` 
