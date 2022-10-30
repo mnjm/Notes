@@ -11,8 +11,10 @@ changes="$(git status --porcelain)"
 changeExists="$(echo $changes | wc -l)"
 
 if [ $changeExists -gt 0 ]; then
+    commitMsg="vault backup: $(date +"%Y-%m-%d %H:%M:%S") $(hostname)"
+    echo $commitMsg
     git add .
-    git commit -m "vault backup: $(date +"%Y-%m-%d %H:%M:%S") $(hostname)\n\nFiles:$changes"
+    git commit -m "$commitMsg" -m "$changes"
     git pull --rebase
     git push origin main
 else
