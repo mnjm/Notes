@@ -7,7 +7,7 @@ if [ ! -d "./.obsidian" ]; then
     exit 3
 fi
 
-changes="$(git status --porcelian)"
+changes="$(git status --porcelain)"
 changeExists="$(echo $changes | wc -l)"
 
 if [ $changeExists -gt 0 ]; then
