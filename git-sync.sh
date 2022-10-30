@@ -10,8 +10,8 @@ fi
 changeExists="$(git status --porcelain | wc -l)"
 
 if [ $changeExists -gt 0 ]; then
-    git pull --rebase
     git add .
     git commit -m "vault backup: $(date +"%Y-%m-%d %H:%M:%S") $hostname"
+    git pull --rebase
     git push origin main
 fi 
