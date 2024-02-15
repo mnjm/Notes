@@ -24,8 +24,8 @@ Steps to host:
         - https://www.docker.com/blog/how-to-dockerize-your-python-applications/
     2. Run `flyctl launch` but dont deploy if prompted
     3. To host nonweb single machine host apps, remove some lines from fly.toml (created by flyctl deploy)
-        - Lines to remove 
-        '''
+        - Lines to remove
+       ```
         [build]
 
         [http_service]
@@ -35,6 +35,5 @@ Steps to host:
           auto_start_machines = true
           min_machines_running = 0
           processes = ["app"]
-
-        '''
+       ```
     4. To deploy, run `flyctl deploy`
